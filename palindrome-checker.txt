@@ -1,0 +1,25 @@
+function palindrome(str) {
+let letters = str.replace(/[^a-z0-9+]+/gi,"").toLowerCase();
+let firsthalf;
+let secondhalf;
+
+if (letters.length % 2 === 0){
+  firsthalf = letters.slice(0, letters.length/2);
+  secondhalf = letters.slice(letters.length/2);
+  } 
+  else {
+  firsthalf = letters.slice(0, (letters.length-1)/2);
+  secondhalf = letters.slice((letters.length+1)/2);
+}
+
+let secondorder = secondhalf.split("").reverse().join("");
+if(secondorder === firsthalf){
+  return true;
+}
+  else{
+  return false;
+}
+console.log(firsthalf)
+}
+
+palindrome("_eye");
